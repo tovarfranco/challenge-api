@@ -4,8 +4,6 @@ const path = require('path');
 
 // =========== Read BBDD ===========================
 
-
-
 let discount = (product, discount) =>{
     product.price = {
         original : product.price,
@@ -39,7 +37,6 @@ let calculateDiscount = (products) => {
     return products
 
 }
-
 
 // =========== Controller ============================
 const productController = {
