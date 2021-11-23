@@ -1,0 +1,28 @@
+{
+  "name": "challenge-api",
+  "version": "1.0.0",
+  "description": "api that exposes products details",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tovarfranco/challenge-api.git"
+  },
+  "keywords": [
+    "api",
+    "challenge",
+    "node",
+    "products"
+  ],
+  "author": "Franco Tovar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tovarfranco/challenge-api/issues"
+  },
+  "homepage": "https://github.com/tovarfranco/challenge-api#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
