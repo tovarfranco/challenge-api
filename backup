@@ -1,0 +1,18 @@
+// productList.forEach(product => {
+//     if (product.category == 'boots'){
+//         discount(product, 0.3)
+//     }
+//     else if(product.sku == 000003){
+//         discount(product, 0.15)
+//     }
+//     else{
+//         no_discount(product)
+//     }
+// });
+
+
+// let filterProductsBy = (productList, param) => {
+//     return productList.filter(product => {
+//         return product[Object.keys(param)] == param[Object.keys(param)]
+//     });
+// }
