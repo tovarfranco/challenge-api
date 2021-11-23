@@ -6,6 +6,6 @@ const path = require('path');
 const app = express()
 
 // =========== Routing ===================================
-const productRoute = require('./routes/productRoute.js');
+const productsRoute = require('./routes/productsRoute.js');
 
 app.use('/products', productRoute);
