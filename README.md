@@ -28,6 +28,12 @@ API that exposes product details
 
 ## Run 
 
+1. Once installed the packages, we can go live:
+   ```bash
+   npm start
+   ```
+   > Note: the api service will be running in the specified port.
+
 
 ## Test
 
