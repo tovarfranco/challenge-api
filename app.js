@@ -12,7 +12,7 @@ app.use('/products', productsRoute);
 
 
 app.use((req,res) => {                                  
-    res.status(404).render('error');
+    res.status(404).send('Route not Found');
 })
 
 // =========== Export App ======================
