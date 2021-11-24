@@ -57,5 +57,14 @@ API that exposes product details
    > Note: All the necessary node modules will be installed and the service go live
 
 
+## API Documentation - SWAGGER
+
+1. Once the api is live, we can check its documentation developed with Swagger. 
+   There we can test the endpoint with and without query string parameters.
+   ```bash
+   localhots:3000/api-docs
+   ```
+   > This is the route for the api docs
+
 # Extra: AWS Deploy
 
