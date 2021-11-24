@@ -57,5 +57,5 @@ API that exposes product details
    > Note: All the necessary node modules will be installed and the service go live
 
 
-# AWS Deploy
+# Extra: AWS Deploy
 
