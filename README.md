@@ -66,5 +66,8 @@ API that exposes product details
    ```
    > This is the route for the api docs
 
-# Extra: AWS Deploy
+## Extra: AWS Deploy
 
+#### CI/CD Pipeline
+
+<p> <img src="images/aws.jpeg" width="100" align = "left"> </p>
