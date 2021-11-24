@@ -22,7 +22,7 @@ API that exposes product details
    > Note: You can obtain the url from Code option in github.
 
 
-## Run npm
+## Run with npm
 
 1. Open a terminal in the main directory and install the node modules packages:
    ```bash
@@ -44,6 +44,17 @@ API that exposes product details
    > Note: All the necessary node modules will be installed and the service go live
 
 ## Test
+
+1. Open a terminal in the main directory and run the with:
+   ```bash
+   npm test
+   ```
+   > Note: All the test cases will be executed
+2. If you want to install the modules and run the tests:
+   ```bash
+   ./test.sh
+   ```
+   > Note: All the necessary node modules will be installed and the service go live
 
 
 # AWS Deploy
