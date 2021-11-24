@@ -2,7 +2,9 @@
 const fs = require('fs');          //Read and write files           
 const path = require('path'); 
 
-// =========== Read BBDD ===========================
+// =========== Models ============================
+const Product = require('../models/Product.model.js');
+
 
 let discount = (product, discount) =>{
     product.price = {
@@ -32,28 +34,12 @@ let calculateDiscount = (products) => {
 // =========== Controller ============================
 const productController = {
     list: (req,res) => {
-        let productListPath = path.join(__dirname, "../database/productsList.json");    //DB file route
-        const products = JSON.parse(fs.readFileSync(productListPath, 'utf-8'));
-        const productList = products["products"]
-        
-        let filteredProducts = []
-
-        if (req.query.category){
-            filteredProducts = productList.filter((product) => {
-                return product.category == req.query.category
-            })
-            res.json(calculateDiscount(filteredProducts))
+        if (Object.keys(req.query).length === 0){
+            res.send(calculateDiscount(Product.findAll()))
         }
-        else if (req.query.priceLessThan){
-            filteredProducts = productList.filter((product) => {
-                return product.price < req.query.priceLessThan
-            })
-            res.json(calculateDiscount(filteredProducts))
-        }
-        else{
-            filteredProducts = productList
-            res.json(calculateDiscount(filteredProducts))
-        }
+        else(
+            res.send(calculateDiscount(Product.findByField(req.query)))
+        )
     }
 }
 
