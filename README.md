@@ -1,4 +1,4 @@
-# API
+# Challenge API
 API that exposes product details
 
 ## Requirements
@@ -45,7 +45,7 @@ API that exposes product details
 
 ## Test
 
-1. Open a terminal in the main directory and run the with:
+1. Once installed the modules, open a terminal in the main directory and run the with:
    ```bash
    npm test
    ```
