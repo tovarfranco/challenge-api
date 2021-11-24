@@ -35,10 +35,10 @@ let calculateDiscount = (products) => {
 const productController = {
     list: (req,res) => {
         if (Object.keys(req.query).length === 0){
-            res.send(calculateDiscount(Product.findAll()))
+            res.send(calculateDiscount(Product.findAll()).slice(0,5))
         }
         else(
-            res.send(calculateDiscount(Product.findByField(req.query)))
+            res.send(calculateDiscount(Product.findByField(req.query)).slice(0,5))
         )
     }
 }
