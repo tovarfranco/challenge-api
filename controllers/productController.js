@@ -34,12 +34,16 @@ let calculateDiscount = (products) => {
 // =========== Controller ============================
 const productController = {
     list: (req,res) => {
-        if (Object.keys(req.query).length === 0){
-            res.send(calculateDiscount(Product.findAll()).slice(0,5))
+        try {
+            if (Object.keys(req.query).length === 0){
+                res.json(calculateDiscount(Product.findAll()).slice(0,5))
+            }
+            else(
+                res.json(calculateDiscount(Product.findByField(req.query)).slice(0,5))
+            )
+        } catch(error){
+            res.status(500).json({ data: null, error: error, success: false });
         }
-        else(
-            res.send(calculateDiscount(Product.findByField(req.query)).slice(0,5))
-        )
     }
 }
 
