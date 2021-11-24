@@ -1,3 +1,4 @@
+const { expect } = require("chai");
 let chai = require("chai")
 let chaiHttp = require("chai-http")
 let server = require("../app")
@@ -7,7 +8,7 @@ chai.should();
 
 chai.use(chaiHttp)
 
-describe("Products Api", () => {
+describe("API products", () => {
 
     //Test : GET Route
 
@@ -138,7 +139,7 @@ describe("Products Api", () => {
     describe("GET /products?priceLessThan=90000", () => {
         
         it("It should get all products with price less than 90000", (done) => {
-            const priceLessThan = '90000'
+            const priceLessThan = '70000'
             chai.request(server)
                 .get("/products?priceLessThan="+priceLessThan)
                 .end((err,response) => {
@@ -152,11 +153,10 @@ describe("Products Api", () => {
                         element.should.have.property('category')
                         element.should.have.property('price')
                         element.price.should.be.a('object')
+                        element.price.original.should.be.lessThan(70000)
                     });
                 done();
                 })
         })
     })
-
-
 })
