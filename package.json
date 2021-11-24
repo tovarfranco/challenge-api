@@ -4,7 +4,7 @@
   "description": "api that exposes products details",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "start": "node ./bin/www"
   },
   "repository": {
@@ -25,5 +25,10 @@
   "homepage": "https://github.com/tovarfranco/challenge-api#readme",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
+    "mocha": "^9.1.3"
   }
 }
