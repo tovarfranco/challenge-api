@@ -6,7 +6,7 @@ const router = express.Router();
 const productController = require('../controllers/productController.js'); 
 
 
-router.get('/', productController.index)
+router.get('/', productController.list)
 
 // =========== Export Router =========================
 module.exports = router;  

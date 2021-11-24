@@ -1,9 +1,11 @@
 // =========== General ===================================
 const express = require('express');                                   
-const path = require('path');   
 
 // =========== Express app ===================================
 const app = express()
+
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
 
 // =========== Routing ===================================
 const productsRoute = require('./routes/productsRoute.js');

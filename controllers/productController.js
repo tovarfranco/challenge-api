@@ -31,7 +31,7 @@ let calculateDiscount = (products) => {
 
 // =========== Controller ============================
 const productController = {
-    index: (req,res) => {
+    list: (req,res) => {
         let productListPath = path.join(__dirname, "../database/productsList.json");    //DB file route
         const products = JSON.parse(fs.readFileSync(productListPath, 'utf-8'));
         const productList = products["products"]
@@ -42,17 +42,17 @@ const productController = {
             filteredProducts = productList.filter((product) => {
                 return product.category == req.query.category
             })
-            res.send(calculateDiscount(filteredProducts))
+            res.json(calculateDiscount(filteredProducts))
         }
         else if (req.query.priceLessThan){
             filteredProducts = productList.filter((product) => {
                 return product.price < req.query.priceLessThan
             })
-            res.send(calculateDiscount(filteredProducts))
+            res.json(calculateDiscount(filteredProducts))
         }
         else{
             filteredProducts = productList
-            res.send(calculateDiscount(filteredProducts))
+            res.json(calculateDiscount(filteredProducts))
         }
     }
 }
