@@ -1,5 +1,5 @@
 // =========== General ==============================
-const fs = require('fs');                                                        // Para la lectura y escritura de archivos.
+const fs = require('fs');          //Read and write files           
 const path = require('path'); 
 
 // =========== Read BBDD ===========================
@@ -7,17 +7,8 @@ const path = require('path');
 let discount = (product, discount) =>{
     product.price = {
         original : product.price,
-        final : product.price * discount,
-        discount_percentage: (discount*100).toString() + '%',
-        currency: "EUR"
-    }
-}
-
-let no_discount = (product) =>{
-    product.price = {
-        original : product.price,
-        final : product.price,
-        discount_percentage: null,
+        final : product.price * (1-discount),
+        discount_percentage: discount !== 0 ? (discount*100).toString() + '%' : null,
         currency: "EUR"
     }
 }
@@ -31,7 +22,7 @@ let calculateDiscount = (products) => {
             discount(product, 0.15)
         }
         else{
-            no_discount(product)
+            discount(product, 0)
         }
     })
     return products
@@ -41,7 +32,7 @@ let calculateDiscount = (products) => {
 // =========== Controller ============================
 const productController = {
     index: (req,res) => {
-        let productListPath = path.join(__dirname, "../database/productsList.json");    // Ruta del archivo BBDD.
+        let productListPath = path.join(__dirname, "../database/productsList.json");    //DB file route
         const products = JSON.parse(fs.readFileSync(productListPath, 'utf-8'));
         const productList = products["products"]
         
