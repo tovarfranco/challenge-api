@@ -11,7 +11,7 @@ app.use(express.json());
 const swaggerDocs = require('./docs/swagger.js')
 const swaggerUi = require('swagger-ui-express')
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs))
+app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 
 // =========== Routing ===================================
 const productsRoute = require('./routes/productsRoute.js');
