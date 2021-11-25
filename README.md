@@ -70,4 +70,4 @@ API that exposes product details
 
 #### CI/CD Pipeline
 
-<p> <img src="images/aws.jpeg"  align = "left"> </p>
+<p> <img src="images/aws.jpeg" width="1000" align = "left"> </p>
