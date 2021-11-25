@@ -70,7 +70,7 @@ API that exposes product details
 
 ### CI/CD Pipeline
 
-<p> The CI/CD pipeline is conformed with the following tools: </p>
+<p> The CI/CD pipeline is conformed of the following tools: </p>
 
 <div>
     <ul>
