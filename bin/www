@@ -3,4 +3,4 @@
 const app = require("../app");    //entry point
 const port = process.env.PORT || 3000;    //define port
 
-app.listen(port, () => console.log('Server running in port:'));   //server running
+app.listen(port, () => console.log('Server running in port:'+port.toString()));   //server running
