@@ -68,6 +68,19 @@ API that exposes product details
 
 ## Extra: AWS Deploy
 
-#### CI/CD Pipeline
+### CI/CD Pipeline
+
+<p> The CI/CD pipeline is conformed of the following tools: </p>
+
+<div>
+    <ul>
+        <li> Github
+        <li> CodeBuild AWS
+        <li> ElasticBeanstalk
+    <ul>
+</div>
+
+<p> Once the changes are made to the repository, in order to execute the pipeline a PULL REQUEST should be generated to merge into dev branch. Once the merge is approved and executed, a codeBuild pipeline will be triggered, which will deploy the code from dev branch </p>
+
 
 <p> <img src="images/aws.jpeg" width="1000" align = "left"> </p>
