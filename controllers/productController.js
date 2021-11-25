@@ -1,11 +1,11 @@
 // =========== General ==============================
 const fs = require('fs');          //Read and write files           
-const path = require('path'); 
+const path = require('path');      //Paths manage
 
 // =========== Models ============================
 const Product = require('../models/Product.model.js');
 
-
+/*** Calcultate the given discount for a given product ***/
 let discount = (product, discount) =>{
     product.price = {
         original : product.price,
@@ -15,6 +15,7 @@ let discount = (product, discount) =>{
     }
 }
 
+/*** Calcultate the discounts for a list of products ***/
 let calculateDiscount = (products) => {
     products.forEach(product => {
         if (product.category == 'boots'){
@@ -35,17 +36,17 @@ let calculateDiscount = (products) => {
 const productController = {
     list: (req,res) => {
         try {
-            if (Object.keys(req.query).length === 0){
-                res.json(calculateDiscount(Product.findAll()).slice(0,5))
+            if (Object.keys(req.query).length === 0){                     //if no params are sent:
+                res.json(calculateDiscount(Product.findAll()).slice(0,5)) //fillAll products
             }
-            else(
+            else(                                                         //else findByField product         
                 res.json(calculateDiscount(Product.findByField(req.query)).slice(0,5))
             )
         } catch(error){
-            res.status(500).json({ data: null, error: error, success: false });
+            res.status(500).json({ data: null, error: error, success: false }); //catch error
         }
     }
 }
 
 // =========== Export Controller ===========================
-module.exports = productController 
+module.exports = productController    //export the controller
