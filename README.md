@@ -84,9 +84,7 @@ API that exposes product details
 
 
 <p> <img src="images/aws.jpeg" width="1000" align = "left"> </p>
-
-
-
+<br>
 
 ### Environments
 
@@ -96,7 +94,7 @@ API that exposes product details
         <li> PROD -> Branch MAIN -> URL: http://nodedev-env.eba-mj3pkgim.us-west-2.elasticbeanstalk.com/products
     <ul>
 </div>
-
+<br>
 
 
 
