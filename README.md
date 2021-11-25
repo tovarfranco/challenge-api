@@ -96,7 +96,24 @@ API that exposes product details
 </div>
 <br>
 
+## Extra: Dockerization
 
+1. In order to create an api microservice, docker will enable to create containers
+2. To create build the docker image:
+   ```bash
+   docker build . -t challenge-api
+   ```
+   > Note: An image named challenge-api will be created
+3. To create the container and go live:
+   ```bash
+   docker run -p 8080:3000 -d challenge-api
+   ```
+   > Note: The container will be created
+3. To check the container status:
+   ```bash
+   docker ps
+   ```
+   > Note: The status will be showed
 
 ## Explanations on decisions taken
 
@@ -109,3 +126,5 @@ API that exposes product details
 4. A github repo with main and dev branch was created. This is in order to have two different environments. When a new change needs to be implemented, a new branch should be created and the changes should be pushed. Once the changes are finished the code should be merge into dev by creating a new pull request. If the code works properly and all the tests run well, it can be merge to the main branch creating a new pull request. If any conflicts appears, it should be resolved.
 
 5. In order to implement a CI/CD process, AWS was the option, since I already have a free tier account. ElasticBeanstalk is the service to create applications and environments, where a dev and prod env were developed. Codepipeline is the service to build, and deploy pipelines by connecting it to a Github repo and a determined branch. Every time a pull request is created for dev, the pipeline related to the dev environment in EBS is deployed. The same process is executed when comes up to main branch.
+
+6. In order to make this api to run in any machine, an image from docker could be build, following the steps above. This will enable to run the api without installing node and packages locally. A container environment will be set in and will expose its port. Pre-requisite: docker installed
