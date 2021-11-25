@@ -1,3 +1,4 @@
+// =========== Swagger Doc ============================
 const swaggerJsDoc = require('swagger-jsdoc')
 
 // Extended : https://swagger.io/specification/#infoObject
@@ -18,4 +19,4 @@ const swaggerOptions = {
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions)
 
-module.exports = swaggerDocs
+module.exports = swaggerDocs  //Export swaggerDocs
