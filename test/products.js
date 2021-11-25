@@ -159,4 +159,19 @@ describe("API products", () => {
                 })
         })
     })
+
+    describe("GET /products?category=shirt", () => {
+        
+        it("It should not get products", (done) => {
+            const category = 'shirt'
+            chai.request(server)
+                .get("/products?category="+category)
+                .end((err,response) => {
+                    response.should.have.status(200);
+                    response.body.should.be.a('array');
+                    response.body.should.be.length(0)
+                done();
+                })
+        })
+    })
 })
