@@ -9,7 +9,7 @@ const Product = require('../models/Product.model.js');
 let discount = (product, discount) =>{
     product.price = {
         original : product.price,
-        final : product.price * (1-discount),
+        final : Math.round(product.price * (1-discount)),
         discount_percentage: discount !== 0 ? (discount*100).toString() + '%' : null,
         currency: "EUR"
     }
